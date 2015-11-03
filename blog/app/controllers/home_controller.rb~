@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
-	def index
+	def Index
 		puts"hello"
-		@a = ["Sachin","Saurav","Rahul"]
+		@a=1
 
 	end
 end

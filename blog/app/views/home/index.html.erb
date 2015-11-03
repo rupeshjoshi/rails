@@ -11,14 +11,20 @@ hello
      	margin-left: 500px ;
      	
      }
-
+     
+     ul#menu li {
+     	display: inline;
+     }
 
 
     </style>
+    <!--<base href="http://www.w3schools.com/images/" target="_blank"> -->
+    <basefont color="red" size="5">
+
   </head>
   <body bgcolor="pink">
     <h1>This is the Home Page</h1>
-    <a href="google.co.in">Google</a>
+    <a href="http://google.co.in">Google</a>
     <img src= "w3schools.jpg" alt="Image" width="104" height="142">
     <p title="About Rails">  
       this is the paragraph.
@@ -94,8 +100,57 @@ hello
         </table>
       </form> -->
     
+    <audio controls autoplay>
+       <source src="sms.mp3" type="audio/mpeg">
+       audio not supported
+    </audio><br/>
+    unordered list 
+    <ul style="list-style-type:square">
+     <li>Coffee</li>
+     <li>Tea</li>
+     <li>Milk</li>
+    </ul>  
+    ordered list 
+    <ol start="5">
+     <li>Coffee</li>
+     <li>Tea</li>
+     <li>Milk</li>
+    </ol> 
 
 
+    <h2>Horizontal List</h2>
+
+    <ul id="menu">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>PHP</li>
+    </ul> 
+  
+  <% @a.each do |i| -%>
+  <%= i %>
+  
+  <% end -%>
+
+   <p><cite>The Scream</cite> by Edward Munch. Painted in 1893.</p> 
+
+
+   <form>
+    <fieldset>
+    <legend>Personalia:</legend>
+      Name: <input type="text"><br>
+      Email: <input type="text"><br>
+      Date of birth: <input type="text">
+    </fieldset>
+   </form>
+
+   <p>My family and I visited The Epcot center this summer.</p>
+ 
+   <aside>
+   <h4>Epcot Center</h4>
+   <p>The Epcot Center is a theme park in Disney World, Florida.</p>
+   </aside> 
+   <!--<img src="stickman.gif" width="24" height="39" alt="Stickman"> -->
 
   </body>
 </html>
