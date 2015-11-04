@@ -1,17 +1,76 @@
- 
-<%= @find_byuser.name %>
-<%= @find_byuser.city %>
+
+
+<% @takeuser.each do |i| -%>
+<%= i.name %>
+<%= i.city %> 
+<%= i.gender %> <br/>
+<% end -%>
+
+
 
 
 <!--
-<%= @lastuser.name %>
-<% @firstuser.each do |i| -%>
+
+<% @lastuser.each do |i| -%>
+<%= i.name %>
+<%= i.city %> 
+<%= i.gender %> <br/>
+<% end -%>
+
+<% @select_user.each do |i| -%>
+<%= i.name %>
+<%= i.city %> <br/>
+<% end -%>
+
+ <% @order_user.each do |i| -%>
 <%= i.name %>
 <%= i.gender %> 
 <%= i.city %> <br/>
 <% end -%>
+
+<% @not_user.each do |i| -%>
+<%= i.name %>
+<%= i.gender %> 
+<%= i.city %> <br/>
+<% end -%>
+
+<% @subset_user.each do |i| -%>
+<%= i.name %>
+<%= i.gender %> 
+<%= i.city %> <br/>
+<% end -%>
+
+<% @where_user.each do |i| -%>
+<%= i.name %>
+<%= i.gender %> 
+<%= i.city %> <br/>
+<% end -%>
+
+<% @startbatch_user.each do |i| -%>
+<%= i.name %>
+<%= i.gender %> 
+<%= i.city %> <br/>
+<% end -%>
+
+<% @batch_user.each do |i| -%>
+<%= i.name %>
+<%= i.gender %> 
+<%= i.city %> <br/>
+<% end -%>
+
+<% @for_each.each do |i| -%>
+<%= i.name %>
+<% end %>
+<%= @find_byuser.name %>
+<%= @find_byuser.city %>
+
+<% @batch.each do |i| -%>
+<%= i.name %>
+<% end %>
+
+
 <%= @user.name %> 
-<%= @takeuser.name %>
+
 <%= @user.gender %> 
 <hr>
 <br>
