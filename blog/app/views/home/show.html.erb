@@ -1,15 +1,93 @@
 
 
+<% @ncity_user.each do |i| -%>
+<%= i.name %>&nbsp &nbsp&nbsp &nbsp
+<%= i.gender %>&nbsp &nbsp&nbsp &nbsp
+<%= i.city %>
+ <br/>
+<% end -%>
+
+<!--
+
+<% @ncity_user.each do |i| -%>
+<%= i.name %>&nbsp &nbsp&nbsp &nbsp
+<%= i.gender %>&nbsp &nbsp&nbsp &nbsp
+<%= i.city %>
+ <br/>
+<% end -%>
+
+<% @nested_join.each do |i| -%>
+<%= i.name %>&nbsp &nbsp&nbsp &nbsp
+<%= i.gender %>&nbsp &nbsp&nbsp &nbsp
+<%= i.city %>
+ <br/>
+<% end -%>
+
+
+<% @multiplejoin.each do |i| -%>
+<%= i.topic %>&nbsp &nbsp&nbsp &nbsp
+<%= i.description %>&nbsp &nbsp&nbsp &nbsp
+
+ <br/>
+<% end -%>
+
+<% @inner_join.each do |i| -%>
+<%= i.name %>&nbsp &nbsp&nbsp &nbsp
+<%= i.gender %>&nbsp &nbsp&nbsp &nbsp
+<%= i.city %>
+ <br/>
+<% end -%>
+
+
+<% @join_user.each do |i| -%>
+<%= i.name %>&nbsp &nbsp&nbsp &nbsp
+<%= i.gender %>&nbsp &nbsp&nbsp &nbsp
+<%= i.city %>
+ <br/>
+<% end -%>
+
+<% @only_user.each do |i| -%>
+<%= i.name %>&nbsp &nbsp&nbsp &nbsp
+<%= i.gender %>&nbsp &nbsp&nbsp &nbsp
+<%= i.city %>
+ <br/>
+<% end -%>
+
+<% @unscope_user.each do |i| -%>
+<%= i.name %>&nbsp &nbsp&nbsp &nbsp
+<%= i.city %>
+<% end -%>
+
+<% @having_user.each do |i| -%>
+<%= i.ordered_date %>&nbsp &nbsp&nbsp &nbsp
+<%= i.total %>
+<% end -%>
+
+<%= @grouptotal_user -%>
+<% @limit_user.each do |i| -%>
+<%= i.name %>&nbsp &nbsp&nbsp &nbsp
+<%= i.gender %>&nbsp &nbsp&nbsp &nbsp
+<%= i.city %>
+ <br/>
+<% end -%>
+
+<% @select_user.each do |i| -%>
+<%= i.name %>&nbsp &nbsp&nbsp &nbsp
+<%= i.city %>
+ <br/>
+<% end -%>
+
+<% @distinct_user.each do |i| -%>
+<%= i.name %>
+ <br/>
+<% end -%>
+
 <% @takeuser.each do |i| -%>
 <%= i.name %>
 <%= i.city %> 
 <%= i.gender %> <br/>
 <% end -%>
 
-
-
-
-<!--
 
 <% @lastuser.each do |i| -%>
 <%= i.name %>
