@@ -1,13 +1,50 @@
 
 
+
+<%= @exist %>
+   
+<!--
+<% @pluck1.each do |i| -%>
+<%= i%>
+ <br/>
+<% end -%>
+
+<% @pluck.each do |i| -%>
+<%= i%>
+ <br/>
+<% end -%>
+
+<% @selectall.each do |i| -%>
+<%= i%>
+ <br/>
+<% end -%>
+
+<%=@findcreate_user.name %>
+
+<% @massociation.each do |i| -%>
+<%= i.topic %>&nbsp &nbsp&nbsp &nbsp
+
+<%= i.user.name %>&nbsp &nbsp&nbsp &nbsp 
+<%= i.user.city%>&nbsp &nbsp&nbsp &nbsp
+<%= i.description %>
+<br>
+<%end -%>
+
+
+<hr>
+<% @association.each do |i| -%>
+<%= i.topic %>&nbsp &nbsp&nbsp &nbsp
+<%= i.user.name %>&nbsp &nbsp&nbsp &nbsp
+
+ <br/>
+<% end -%>
+
 <% @ncity_user.each do |i| -%>
 <%= i.name %>&nbsp &nbsp&nbsp &nbsp
 <%= i.gender %>&nbsp &nbsp&nbsp &nbsp
 <%= i.city %>
  <br/>
 <% end -%>
-
-<!--
 
 <% @ncity_user.each do |i| -%>
 <%= i.name %>&nbsp &nbsp&nbsp &nbsp

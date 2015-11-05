@@ -44,6 +44,20 @@ class HomeController < ApplicationController
       @nested_join = User.joins(articals: :comments)
       @joins_user = User.joins(:articals)
       @ncity_user = User.includes(:articals).limit(3)
+      @massociation = Artical.includes(:user, :comments)
+      @association = Artical.includes(:comments).where(comments: { id: 2 })
+      @findcreate_user = User.find_or_create_by(name: 'Shyam')
+      @selectall= User.connection.select_all("SELECT name, created_at FROM users WHERE id = '1'")
+      @pluck = User.distinct.pluck(:city)
+      @pluck1 = User.pluck(:id, :name)
+      @exist = User.exists?(id: [1,2,3])
+
+      # User.where(name: 'Jon').count
+      #User.where(city: 'Mumbai').count
+
+      #User.sum("id")
+
+      #User.average("id")
 
 	end
 end
