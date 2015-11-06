@@ -1,38 +1,17 @@
-<%= form_tag("/search", method: "get") do %>
-  <%= label_tag(:q, "Search for:") %>
-  <%= text_field_tag(:q) %>
-  <%#= submit_tag("Search") %>
-  <%= check_box_tag(:pet_dog) %>
-  <%= label_tag(:pet_dog, "I own a dog") %>
-  <%= check_box_tag(:pet_cat) %>
-  <%= label_tag(:pet_cat, "I own a cat") %>
-
-  <%= radio_button_tag(:age, "child") %>
-  <%= label_tag(:age_child, "I am younger than 21") %>
-  <%= radio_button_tag(:age, "adult") %> 
-  <%= label_tag(:age_adult, "I'm over 21") %>
-  <br>
-  <%= text_area_tag(:message, "Hi, nice site", size: "24x6") %>
-  <%= password_field_tag(:password) %>
-  <%= hidden_field_tag(:parent_id, "5") %>
-  <%= search_field(:user, :name) %>
-  <%= telephone_field(:user, :phone) %>
-  <%= date_field(:user, :born_on) %>
-  <%= number_field(:product, :price, in: 1.0..20.0, step: 0.5) %><br/>
-
-  <%= label_tag(:name, "Name") %>
-  <%= text_field_tag(:name) %><br/>
-  <%= label_tag(:user_name, "User Name") %>
-  <%= text_field_tag(:user_name) %><br/>
-  <%= label_tag(:password, "Password") %>
-  <%= password_field_tag(:password) %>
+<%= form_tag("/search", method: "post") do %>
   
-  <%= label_tag(:gender, "Gender") %>
-  <%= radio_button_tag(:gender, "Male") %> 
-  <%= radio_button_tag(:gender, "Female") %>
-  <%= submit_tag("go") %> 
-
-
+  <%= label_tag(:name, "Name") %>
+  <%= text_field_tag(:name) %> <br/>
+  <%= label_tag(:city, "City") %>
+  <%= text_field_tag(:city) %><br/>
+  
+  
+  <%= label_tag(:gender, "Gender") %> &nbsp &nbsp &nbsp &nbsp 
+  <%= label_tag(:male, "Male") %>&nbsp &nbsp 
+  <%= radio_button_tag(:gender, "Male") %> &nbsp &nbsp 
+  <%= label_tag(:female, "Female") %>&nbsp &nbsp &nbsp &nbsp 
+  <%= radio_button_tag(:gender, "Female") %>  <br>
+  <%= submit_tag("Submit") %> 
 
 <% end %>
 

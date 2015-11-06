@@ -1,0 +1,22 @@
+<%= @user.name %> 
+<%= @user.city%> 
+<%= @user.gender %> 
+
+
+
+<%= form_tag("/update_perform", method: "post") do %>
+ 
+  <%= label_tag(:name, "Name") %>
+  <%= text_field_tag(:name,@user.name) %> <br/>
+  <%= label_tag(:city, "City") %>
+  <%= text_field_tag(:city,@user.city) %><br/>
+  
+  <%= hidden_field_tag(:id, "@user.id") %>
+  <%= label_tag(:gender, "Gender") %> &nbsp &nbsp &nbsp &nbsp 
+  <%= label_tag(:male, "Male") %>&nbsp &nbsp 
+  <%= radio_button_tag(:gender, "Male") %> &nbsp &nbsp 
+  <%= label_tag(:female, "Female") %>&nbsp &nbsp &nbsp &nbsp 
+  <%= radio_button_tag(:gender, "Female") %>  <br/>
+  <%= submit_tag("Update") %> 
+
+<% end %>

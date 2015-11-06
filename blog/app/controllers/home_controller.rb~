@@ -1,7 +1,0 @@
-class HomeController < ApplicationController
-	def Index
-		puts"hello"
-		@a=1
-
-	end
-end

@@ -7,7 +7,7 @@ class HomeController < ApplicationController
 
 	def show
       @user = User.find(params[:id])
-      @a = User.find([1,5])
+      @a = User.find([1,2])
       @takeuser = User.take(2)
       #@takeuser = User.take
       @firstuser = User.first(3)
@@ -50,7 +50,7 @@ class HomeController < ApplicationController
       @selectall= User.connection.select_all("SELECT name, created_at FROM users WHERE id = '1'")
       @pluck = User.distinct.pluck(:city)
       @pluck1 = User.pluck(:id, :name)
-      @exist = User.exists?(id: [1,2,3])
+      #@exist = User.exists?(id: [1,2,3])
 
       # User.where(name: 'Jon').count
       #User.where(city: 'Mumbai').count
@@ -60,5 +60,32 @@ class HomeController < ApplicationController
       #User.average("id")
 
 	end
+
+
+      def file
+        
+        
+
+      end
+
+      def search 
+        @new_user = User.create(:name => params[:name],:city=> params[:city] ,:gender=> params[:gender])  
+
+      end 
+
+      def update_user
+
+      end
+
+      def update
+            @user = User.find(params[:id])
+           
+      end
+      
+      def update_perform
+            @update_user = User.update(:id => params[:id], :name => params[:name],:city=> params[:city] ,:gender=> params[:gender])
+      end
+
+
 end
 

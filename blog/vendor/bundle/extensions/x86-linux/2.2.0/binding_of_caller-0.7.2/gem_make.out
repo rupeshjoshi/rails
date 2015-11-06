@@ -1,0 +1,12 @@
+/usr/share/rvm/rubies/ruby-2.2.1/bin/ruby -r ./siteconf20151106-28131-1j4rusf.rb extconf.rb
+
+make "DESTDIR=" clean
+make: *** No rule to make target 'clean'.  Stop.
+
+make "DESTDIR="
+echo "Nada."
+Nada.
+
+make "DESTDIR=" install
+echo "Nada."
+Nada.
