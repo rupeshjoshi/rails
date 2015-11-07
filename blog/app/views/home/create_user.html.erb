@@ -1,0 +1,15 @@
+<center>
+<%= form_for @new_user, url: {action: "create"} do |f| %>
+  <%= f.label :Name %>:&nbsp&nbsp&nbsp&nbsp
+  <%= f.text_field :name %><br />&nbsp&nbsp&nbsp
+
+  <%= f.label :city %>:&nbsp&nbsp&nbsp
+  <%= f.text_field :city %><br />
+  <%= f.label :gender %>&nbsp&nbsp&nbsp&nbsp&nbsp
+  <%= f.radio_button :gender,"Male" %>&nbsp&nbsp
+  <%= f.label(:Male) %>&nbsp&nbsp&nbsp&nbsp
+  <%= f.radio_button :gender,"Female" %>
+  <%= f.label(:female) %><br />
+  <%= f.submit %>
+<% end %>
+</center>

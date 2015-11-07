@@ -8,8 +8,15 @@ Rails.application.routes.draw do
   get '/file' => 'home#file'
   post '/search'=> 'home#search'
   get '/update_user' =>'home#update_user'
-  post '/update' => 'home#update' 
-  post '/update_perform' =>'home#update_perform'
+  get '/update' => 'home#update' 
+  post '/update_perform' => 'home#update_perform'
+  get '/create_user' => 'home#create_user'
+  post'/create' => 'home#create'
+  get '/delete_user' => 'home#delete_user'
+  get '/all_users' => 'home#all_users'
+  post '/all_userd' => 'home#all_users'
+  get '/search_user' => 'home#search_user', :as => "search_user"
+  get '/find' => 'home#find'
     # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

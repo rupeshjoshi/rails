@@ -11,7 +11,7 @@
   <%= label_tag(:city, "City") %>
   <%= text_field_tag(:city,@user.city) %><br/>
   
-  <%= hidden_field_tag(:id, "@user.id") %>
+  <%= hidden_field_tag(:id, @user.id) %>
   <%= label_tag(:gender, "Gender") %> &nbsp &nbsp &nbsp &nbsp 
   <%= label_tag(:male, "Male") %>&nbsp &nbsp 
   <%= radio_button_tag(:gender, "Male") %> &nbsp &nbsp 

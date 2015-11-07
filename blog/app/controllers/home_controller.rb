@@ -83,9 +83,68 @@ class HomeController < ApplicationController
       end
       
       def update_perform
-            @update_user = User.update(:id => params[:id], :name => params[:name],:city=> params[:city] ,:gender=> params[:gender])
+            @user = User.find(params[:id])
+            @user.update(:id => params[:id], :name => params[:name],:city=> params[:city] ,:gender=> params[:gender])
+          
       end
 
 
+      def create
+          
+           @new_user = User.create(:name => params[:user][:name],:city=> params[:user][:city] ,:gender=> params[:user][:gender]) 
+           
+      end
+      
+      def create_user
+           @new_user=User.new
+      end
+
+
+      def delete_user
+
+      end
+
+       def delete_perform
+            @delete_user= User.find(params[:id])
+            @delete_user
+      end
+
+      def all_users
+
+          if params[:direction]=="nil"
+             params[:direction]="asc"
+             #@user=User.order(params[:sort])
+           #else  
+             @user = User.order(params[:sort] + ' ' + params[:direction])
+          #@user_find = User.where(name: 'params[:name]' ) 
+         # @userd = User.order(name :desc)
+           end
+      end 
+
+       def search_user
+      
+
+        if params[:name]=="NIL"
+            @user_find = User.order(name: :asc)
+          # @user_find = User.all   
+
+         #else
+          #  @user_find=User.find_by(name : params[:name])
+         end
+       end
+        
+
+      def find
+             #@user_find = User.find_by(params[:name])
+             @user_find = User.where(name: 'params[:name]' ) 
+             redirect_to "/all_users"
+             #redirect_to search_user_path
+      end  
+  
+
+
 end
+
+
+
 

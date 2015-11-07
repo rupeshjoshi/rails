@@ -1,0 +1,9 @@
+<center>
+  <%= form_for @delete_user, url: {action: "delete_perform"} do |f| %>
+    <%= f.label :Enter the id %> &nbsp&nbsp&nbsp&nbsp
+    <%= f.text_field :id %> <br />&nbsp&nbsp&nbsp
+    <%= f.submit %>
+
+  <% end %>
+</center>
+
