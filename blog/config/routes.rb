@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get '/delete_user' => 'home#delete_user'
   get '/all_users' => 'home#all_users'
   post '/all_userd' => 'home#all_users'
-  get '/search_user' => 'home#search_user', :as => "search_user"
+  get '/search_user' => 'home#search_user'
   get '/find' => 'home#find'
     # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

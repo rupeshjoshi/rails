@@ -106,25 +106,30 @@ class HomeController < ApplicationController
 
        def delete_perform
             @delete_user= User.find(params[:id])
-            @delete_user
+            
       end
 
-      def all_users
+      def z
+            
+           
+          unless  params[:direction].blank? || params[:sort].blank? || params[:name].blank? 
+             
+             
+            @user = User.find_by(name: params[:name]).order(params[:sort] + ' ' + params[:direction])
+         
+          else
 
-          if params[:direction]=="nil"
-             params[:direction]="asc"
-             #@user=User.order(params[:sort])
-           #else  
+             params[:direction].blank? ? "asc" : params[:direction]  and params[:sort].blank? ? "name" : params[:sort] and params[:name].blank? ? "1" :params[:name]
              @user = User.order(params[:sort] + ' ' + params[:direction])
-          #@user_find = User.where(name: 'params[:name]' ) 
-         # @userd = User.order(name :desc)
-           end
+
+          end 
+             
       end 
 
        def search_user
-      
+  
 
-        if params[:name]=="NIL"
+        if params[:name] == "nil"
             @user_find = User.order(name: :asc)
           # @user_find = User.all   
 
@@ -135,14 +140,29 @@ class HomeController < ApplicationController
         
 
       def find
-             #@user_find = User.find_by(params[:name])
-             @user_find = User.where(name: 'params[:name]' ) 
-             redirect_to "/all_users"
-             #redirect_to search_user_path
+                 
+             
+             redirect_to "/all_users?name=#{params[:name]}" 
+            
       end  
   
-
-
+      def all_users 
+        if params[:direction].present? and params[:sort].present? and params[:name].present?  
+          @user = User.where(name: params[:name]).order(params[:sort] + ' ' + params[:direction])
+        elsif params[:direction].blank? and params[:sort].blank? and params[:name].present? 
+          params[:direction] = "asc"
+          params[:sort] = "name" 
+          @user = User.where(name: params[:name]).order(params[:sort] + ' ' + params[:direction])
+         elsif params[:direction].present? and params[:sort].present? and params[:name].blank?  
+           params[:name] = "1"
+           @user = User.order(params[:sort] + ' ' + params[:direction])
+        elsif params[:direction].blank? and params[:sort].blank? and params[:name].blank? 
+           params[:direction] = "asc"
+           params[:sort] = "name" 
+           params[:name] = "1"
+           @user = User.order(params[:sort] + ' ' + params[:direction])
+        end
+      end 
 end
 
 

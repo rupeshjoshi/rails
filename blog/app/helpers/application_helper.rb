@@ -1,13 +1,28 @@
 module ApplicationHelper
   def sortable(column, title = nil)
-  	if params[:direction]=="nil"
-  	params[:direction]="asc"
-    end	
+  	
     title ||= column.titleize
     direction = (column == params[:sort] && params[:direction] == "asc") ? "desc" : "asc"
     link_to title, :sort => column, :direction => direction
-  end
-    
+     
+  end  
+
+  def sortablegender(column, title = nil)
+  	
+    title ||= column.titleize
+    direction = (column == params[:sort] && params[:direction] == "asc") ? "desc" : "asc"
+    link_to title, :sort => column, :direction => direction
+     
+  end 
+  
+  def sortablecity(column, title = nil, name= params[:name])
+  	
+    title ||= column.titleize
+    direction = (column == params[:sort] && params[:direction] == "asc") ? "desc" : "asc"
+    link_to title, :sort => column, :direction => direction, :name => name
+     
+  end 
+
   def searchable(name)
       name= params[:name]
   end

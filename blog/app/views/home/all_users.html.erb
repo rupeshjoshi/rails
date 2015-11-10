@@ -19,14 +19,14 @@
        
      </table>
       <%= submit_tag("Submit") %> 
-    <%end%>
+    
 
 <table border="1"> 
     <tr>
       
       <th><%= sortable "name" %></th>
-      <th>gender</th>
-      <th>city</th>
+      <th><%= sortablegender "gender" %></th>
+      <th><%= sortablecity("city", @name) %></th>
     </tr>
     <% @user.each do |i| -%>
     <tr> 
@@ -38,3 +38,4 @@
     <% end -%>
     </table>
   <br/> 
+<%end%>
