@@ -1,0 +1,6 @@
+<%= form_tag("/whatever", method: "post") do %>
+  <%= stylesheet_link_tag 'widgEditor' %>
+  <%= javascript_include_tag 'widgEditor' %>
+  <%= text_area 'node', 'content', :cols => "50", :rows=>"3", :class=>"widgEditor" %>
+
+<% end %>

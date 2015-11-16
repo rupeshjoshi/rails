@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   post '/all_userd' => 'home#all_users'
   get '/search_user' => 'home#search_user'
   get '/find' => 'home#find'
+  get '/texteditor' => 'home#texteditor'
+  post '/whatever' => 'home#whatever'
     # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
