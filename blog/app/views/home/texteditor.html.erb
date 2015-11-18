@@ -1,6 +1,92 @@
-<%= form_tag("/whatever", method: "post") do %>
+<!--<%= form_tag("/whatever", method: "post") do %>
   <%= stylesheet_link_tag 'widgEditor' %>
   <%= javascript_include_tag 'widgEditor' %>
   <%= text_area 'node', 'content', :cols => "50", :rows=>"3", :class=>"widgEditor" %>
 
 <% end %>
+
+
+
+<!DOCTYPE html>
+<html>
+<head> 
+<script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
+<script>tinymce.init({selector:'textarea'});</script>
+</head>
+<body>
+    <%= form_tag("/pdf", method: "post") do %>
+    <textarea>Easy! You should check out MoxieManager!</textarea>
+    <%= submit_tag("Submit") %> 
+    <% end -%>
+</body>
+</html>
+
+-->
+<!--
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>A Simple Page with CKEditor</title>
+        <script src="../ckeditor.js"></script>
+    </head>
+    <body>
+      <%= form_tag("/convert", method: "post") do %>
+        <textarea name="editor1" id=":CKEDITOR" rows="10" cols="80">
+            This is my textarea to be replaced with CKEditor.
+        </textarea>
+        <script>
+            // Replace the <textarea id="editor1"> with a CKEditor
+            // instance, using default configuration.
+            CKEDITOR.replace( 'CKEDITOR' );
+        </script>
+        <%= submit_tag("Submit") %> 
+      <% end %>
+    </body>
+      
+</html>
+
+
+<html>
+    <head>
+        <title>A Simple Page with CKEditor</title>
+        <script src="../ckeditor.js"></script>
+    </head>
+    <body>
+      <%= form_tag("/pdf", method: "post") do %>
+        <textarea name="editor1" id=":editor1" rows="10" cols="80">
+            This is my textarea to be replaced with CKEditor.
+        </textarea>
+        <script>
+            // Replace the <textarea id="editor1"> with a CKEditor
+            // instance, using default configuration.
+            CKEDITOR.replace( 'editor1' );
+        </script>
+        <%= submit_tag("Submit") %> 
+      <% end %>
+    </body>
+</html>
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+       <!-- <meta charset="utf-8"> -->
+        <title>A Simple Page with CKEditor</title>
+        <!-- Make sure the path to CKEditor is correct. -->
+       <script src="//cdn.ckeditor.com/4.5.5/full/ckeditor.js"></script>
+       <!-- <script src="../ckeditor.js"></script> -->
+    </head>
+    <body>
+        <%= form_tag("/pdf", method: "post") do %>
+            <textarea name="editor1" id="editor1" rows="10" cols="80">
+                This is my textarea to be replaced with CKEditor.
+            </textarea>
+            <script>
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+                CKEDITOR.replace( 'editor1' );
+            </script>
+            <%= submit_tag("Submit") %> 
+        <% end -%>
+    </body>
+</html>

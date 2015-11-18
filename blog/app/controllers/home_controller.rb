@@ -110,6 +110,7 @@ class HomeController < ApplicationController
   end 
 
   def texteditor
+    
   end
         
   def find
@@ -138,10 +139,67 @@ class HomeController < ApplicationController
   def whatever
   end
   
+  #require 'rubygems'
+  #require 'pdfcrowd'
 
+  
+  def convert
+    begin
+    # create an API client instance
+    client = Pdfcrowd::Client.new("username", "apikey")
+
+    # convert a web page and store the generated PDF to a variable
+      pdf = client.convertHtml("<head></head><body>My HTML Layout</body>")
+
+    # send the generated PDF
+    send_data(pdf, 
+              :filename => "google_com.pdf",
+              :type => "application/pdf",
+              :disposition => "attachment")
+    rescue Pdfcrowd::Error => why
+      render :text => why
+    end
+  end
+  
+  def editor
+    @post = User.new;
+  end
+
+  def pdf
+    @data = params[:editor1]
+    @data = "<html>"+ @data + "</html>"
+    kit = PDFKit.new(@data, :page_size => 'Letter')
+    kit.stylesheets << '/usr/local/bin/wkhtmltopdf'
+
+    # Get an inline PDF
+    pdf = kit.to_pdf
+
+    # Save the PDF to a file
+   file = kit.to_file('/usr/local')
+
+    # PDFKit.new can optionally accept a URL or a File.
+    # Stylesheets can not be added when source is provided as a URL of File.
+   # kit = PDFKit.new('http://google.com')
+   # kit = PDFKit.new(File.new('/Desktop'))
+  end  
+
+  def generatepdf
+    @data = params[:editor1]
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = Prawn::Document.new
+        send_data pdf.render, filename: 'report.pdf', type: 'application/pdf'
+      end
+    end
+
+  end
 
 
 end
+
+
+
 
 
 

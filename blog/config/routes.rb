@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   get '/find' => 'home#find'
   get '/texteditor' => 'home#texteditor'
   post '/whatever' => 'home#whatever'
+  post '/pdf' => 'home#pdf'
+  
     # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
