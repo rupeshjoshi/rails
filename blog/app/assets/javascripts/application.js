@@ -15,5 +15,6 @@
 //= require turbolinks
 //= require_tree .
 //= require froala_editor.min.js
-
+//= require bootstrap-wysihtml5
+//= require bootstrap-wysihtml5/locales
 

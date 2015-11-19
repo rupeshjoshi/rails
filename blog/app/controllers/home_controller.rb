@@ -167,20 +167,22 @@ class HomeController < ApplicationController
 
   def pdf
     @data = params[:editor1]
-    @data = "<html>"+ @data + "</html>"
-    kit = PDFKit.new(@data, :page_size => 'Letter')
-    kit.stylesheets << '/usr/local/bin/wkhtmltopdf'
+   # @data = "<html>"+ @data + "</html>"
+    kit = PDFKit.new(@data, :page_size => 'A4')
 
+    #kit.stylesheets  =  ["#{Rails.root}/app/assets/stylesheets/info.css"]
+
+    
     # Get an inline PDF
     pdf = kit.to_pdf
 
     # Save the PDF to a file
-   file = kit.to_file('/usr/local')
-
+    file = kit.to_file("#{Rails.root}/pdf/file.pdf") 
+    #file=("/home/berylsystems/Desktop/file.pdf")
     # PDFKit.new can optionally accept a URL or a File.
     # Stylesheets can not be added when source is provided as a URL of File.
-   # kit = PDFKit.new('http://google.com')
-   # kit = PDFKit.new(File.new('/Desktop'))
+   #kit = PDFKit.new('http://google.com')
+    #kit = PDFKit.new(File.new('/Desktop'))
   end  
 
   def generatepdf
